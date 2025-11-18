@@ -85,7 +85,7 @@ First, install pytorch following the [instruction](https://pytorch.org). Next, i
 ```
 sudo apt install build-essential python3-dev libopenblas-dev
 pip install torch ninja
-pip install -U MinkowskiEngine --install-option="--blas=openblas" -v --no-deps
+pip install -U MinkowskiEngine --config-settings="--blas=openblas" -v --no-deps
 
 # For pip installation from the latest source
 # pip install -U git+https://github.com/NVIDIA/MinkowskiEngine --no-deps
@@ -99,11 +99,11 @@ If you want to specify arguments for the setup script, please refer to the follo
 # export CUDA_HOME=/usr/local/cuda-11.1; # or select the correct cuda version on your system.
 pip install -U git+https://github.com/NVIDIA/MinkowskiEngine -v --no-deps \
 #                           \ # uncomment the following line if you want to force cuda installation
-#                           --install-option="--force_cuda" \
+#                           --config-settings="--force_cuda" \
 #                           \ # uncomment the following line if you want to force no cuda installation. force_cuda supercedes cpu_only
-#                           --install-option="--cpu_only" \
+#                           --config-settings="--cpu_only" \
 #                           \ # uncomment the following line to override to openblas, atlas, mkl, blas
-#                           --install-option="--blas=openblas" \
+#                           --config-settings="--blas=openblas" \
 ```
 
 ### Anaconda
@@ -127,7 +127,7 @@ conda install pytorch=1.9.0 torchvision cudatoolkit=10.2 -c pytorch -c nvidia
 export CXX=g++-7
 # Uncomment the following line to specify the cuda home. Make sure `$CUDA_HOME/nvcc --version` is 10.2
 # export CUDA_HOME=/usr/local/cuda-10.2
-pip install -U git+https://github.com/NVIDIA/MinkowskiEngine -v --no-deps --install-option="--blas_include_dirs=${CONDA_PREFIX}/include" --install-option="--blas=openblas"
+pip install -U git+https://github.com/NVIDIA/MinkowskiEngine -v --no-deps --config-settings="--blas_include_dirs=${CONDA_PREFIX}/include" --config-settings="--blas=openblas"
 
 # Or if you want local MinkowskiEngine
 git clone https://github.com/NVIDIA/MinkowskiEngine.git
@@ -152,7 +152,7 @@ conda install pytorch=1.9.0 torchvision cudatoolkit=11.1 -c pytorch -c nvidia
 
 # Uncomment the following line to specify the cuda home. Make sure `$CUDA_HOME/nvcc --version` is 11.X
 # export CUDA_HOME=/usr/local/cuda-11.1
-pip install -U git+https://github.com/NVIDIA/MinkowskiEngine -v --no-deps --install-option="--blas_include_dirs=${CONDA_PREFIX}/include" --install-option="--blas=openblas"
+pip install -U git+https://github.com/NVIDIA/MinkowskiEngine -v --no-deps --config-settings="--blas_include_dirs=${CONDA_PREFIX}/include" --config-settings="--blas=openblas"
 
 # Or if you want local MinkowskiEngine
 git clone https://github.com/NVIDIA/MinkowskiEngine.git
